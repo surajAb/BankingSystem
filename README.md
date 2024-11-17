@@ -2,7 +2,7 @@
 # Summary
 The Banking Management System is a web-based platform designed to streamline banking operations by providing administrators, bank employees, and customers with dedicated dashboards to manage their respective activities. The system aims to improve the processes of account management, transaction tracking, and administrative oversight, resulting in a more efficient and user-friendly banking experience.
 # User Type
-Admin:
+ # Admin:
 Manages users, accounts, and system settings.
 Bank Employee:
 Handles customer accounts, loans, and transactions.
