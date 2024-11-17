@@ -1,0 +1,90 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class BankingManagementSystemGUI extends JFrame {
+    private JTextField customerNameField;
+    private JTextField customerAgeField;
+    private JTextField transactionAmountField;
+    private JTextArea outputArea;
+
+    public BankingManagementSystemGUI() {
+        setTitle("Banking Management System");
+        setSize(450, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new FlowLayout());
+
+        // Customer Registration
+        JLabel nameLabel = new JLabel("Customer Name:");
+        customerNameField = new JTextField(20);
+        JLabel ageLabel = new JLabel("Customer Age:");
+        customerAgeField = new JTextField(3);
+        JButton registerButton = new JButton("Register Customer");
+
+        // Transaction Details
+        JLabel transactionLabel = new JLabel("Transaction Amount:");
+        transactionAmountField = new JTextField(10);
+        JButton transactionButton = new JButton("Add Transaction");
+
+        // Output Area
+        outputArea = new JTextArea(10, 35);
+        outputArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(outputArea);
+
+        // Add components to the frame
+        add(nameLabel);
+        add(customerNameField);
+        add(ageLabel);
+        add(customerAgeField);
+        add(registerButton);
+        add(transactionLabel);
+        add(transactionAmountField);
+        add(transactionButton);
+        add(scrollPane);
+
+        // Button Actions
+        registerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                registerCustomer();
+            }
+        });
+
+        transactionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addTransaction();
+            }
+        });
+    }
+
+    private void registerCustomer() {
+        String name = customerNameField.getText();
+        String age = customerAgeField.getText();
+        if (!name.isEmpty() && !age.isEmpty()) {
+            outputArea.append("Registered Customer: " + name + ", Age: " + age + "\n");
+            customerNameField.setText("");
+            customerAgeField.setText("");
+        } else {
+            JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void addTransaction() {
+        String amount = transactionAmountField.getText();
+        if (!amount.isEmpty()) {
+            outputArea.append("Added Transaction: $" + amount + "\n");
+            transactionAmountField.setText("");
+        } else {
+            JOptionPane.showMessageDialog(this, "Please enter the transaction amount.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            BankingManagementSystemGUI bms = new BankingManagementSystemGUI();
+            bms.setVisible(true);
+        });
+    }
+}
