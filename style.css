@@ -1,0 +1,57 @@
+.container {
+    text-align: center;
+    margin-top: 100px;
+    font-family: 'Arial', sans-serif;
+}
+
+
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #0074D9; 
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+
+button {
+    padding: 10px 25px;
+    background-color: #0074D9; /* Banking blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+button:hover {
+    background-color: #005fa3; 
+}
+
+
+body {
+    background-color: #eaf0f7; 
+    margin: 0
+    padding: 0;
+}
+
+
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+
+form {
+    display: inline-block;
+    text-align: left;
+    padding: 20px;
+    background-color: white; 
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
